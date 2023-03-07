@@ -1,7 +1,10 @@
+import { UserProvider } from "./Providers/UserContext/UserContext";
 import { RoutesApp } from "./Routes";
 
 export const App = () => (
   <>
-    <RoutesApp />
+    <UserProvider>
+      <RoutesApp />
+    </UserProvider>
   </>
 );
