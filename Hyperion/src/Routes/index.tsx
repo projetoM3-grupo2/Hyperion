@@ -9,8 +9,9 @@ export const RoutesApp = () => {
   return (
     <Routes>
       <Route path='/' element={<LandPage/>} />
-      <Route path="*" element={<LoginPage/>} />
-      <Route path="*" element={<RegisterPage/>} />
+      <Route path="/login" element={<LoginPage/>} />
+      <Route path="/register" element={<RegisterPage/>} />
+      <Route path="*" element={<LandPage/>} />
     
       
       <Route path='/dashboard' element={<ProtectedRoutes />}>
