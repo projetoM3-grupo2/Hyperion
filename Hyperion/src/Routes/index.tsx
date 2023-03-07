@@ -11,7 +11,7 @@ export const RoutesApp = () => {
       <Route path='/' element={<LandPage/>} />
       <Route path="*" element={<LoginPage/>} />
       <Route path="*" element={<RegisterPage/>} />
-      <Route path="*" element={<RegisterPage/>} />
+    
       
       <Route path='/dashboard' element={<ProtectedRoutes />}>
         <Route index element={<AdminPage/>} />
