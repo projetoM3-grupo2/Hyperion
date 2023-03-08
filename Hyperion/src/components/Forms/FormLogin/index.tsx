@@ -1,14 +1,26 @@
-import { Input } from "@mui/material";
-import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useContext } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { IUser } from "../../../Providers/UserContext/@types";
+import { UserContext } from "../../../Providers/UserContext/UserContext";
+import { Input } from "../Input";
+import { schemaLogin } from "../schemas/loginSchemas";
 
 export const FormLogin = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
-  } = useForm();
+  } = useForm<IUser>({
+    resolver: yupResolver(schemaLogin),
+  });
+  const { userLogin } = useContext(UserContext);
 
-  const submit = () => {};
+  const submit: SubmitHandler<IUser> = (data) => {
+    userLogin(data);
+    reset();
+  };
 
   return (
     <form onSubmit={handleSubmit(submit)}>
