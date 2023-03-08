@@ -30,7 +30,9 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
     try {
       const response = await api.post("/login", formData);
       setUser(response.data);
-      navigate("/dashboard");
+      if(response.data.isAdmin){
+        navigate("/dashboard");       
+      }
       toast.success("Usuário logado com sucesso!");
     } catch (error) {
       console.log(error);

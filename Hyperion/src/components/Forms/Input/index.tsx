@@ -4,7 +4,7 @@ import { StyledFieldset } from "./styled";
 
 interface IInputProps {
   label: string;
-  type: "password" | "text" | "email";
+  type: "password" | "text" | "email" | "age";
   register: UseFormRegisterReturn<string>;
   error?: FieldError;
 }
@@ -13,7 +13,7 @@ export const Input = ({ label, type, error, register }: IInputProps) => {
   return (
     <StyledFieldset>
       <TextField label={label} type={type} {...register} />
-      {error ? <p> {error.message}</p> : null}
+      {error && (<p> {error?.message}</p>)}
     </StyledFieldset>
   );
 };

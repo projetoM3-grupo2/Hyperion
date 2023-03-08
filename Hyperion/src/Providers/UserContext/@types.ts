@@ -13,6 +13,7 @@ export interface IUser {
 export interface IUserRegister {
   email: string;
   password: string;
+  confirmPassword: string;
   name: string;
   age: number;
   id: number;
