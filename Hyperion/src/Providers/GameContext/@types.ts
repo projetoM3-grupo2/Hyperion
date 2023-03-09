@@ -1,6 +1,6 @@
 export interface ICategories {
     categoryId: number,
-    labael: string,
+    label: string,
     slug: string
 
 }
