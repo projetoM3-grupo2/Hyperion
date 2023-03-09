@@ -1,5 +1,6 @@
-import { ReactElement} from "react";
+import { ReactElement } from 'react'
+import {IconType} from 'react-icons'
 
 export interface IIconButtonProps {
-    selectedIcon: ReactElement | undefined
+    selectedIcon: IconType | undefined | ReactElement
 }

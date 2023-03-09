@@ -33,9 +33,8 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
     try {
       const response = await api.post("/login", formData);
       setUser(response.data);
-      if(response.data){
-        navigate("/dashboard");       
-
+      if (response.data) {
+        navigate("/dashboard");
       }
       toast.success("Usuário logado com sucesso!");
     } catch (error) {
@@ -51,7 +50,7 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
   };
 
   return (
-    <UserContext.Provider value={{ userLogin, userLogout, userRegister }}>
+    <UserContext.Provider value={{ userLogin, userLogout, userRegister, user }}>
       {children}
     </UserContext.Provider>
   );
