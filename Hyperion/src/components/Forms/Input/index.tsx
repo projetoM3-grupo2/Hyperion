@@ -2,6 +2,7 @@ import { TextField } from "@mui/material";
 import { FieldError, UseFormRegisterReturn } from "react-hook-form";
 import { StyledFieldset } from "./styled";
 
+
 interface IInputProps {
   label: string;
   type: "password" | "text" | "email" | "age";
