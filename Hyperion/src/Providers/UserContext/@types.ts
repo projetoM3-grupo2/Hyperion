@@ -9,7 +9,6 @@ export interface IUser {
   age: number;
 }
 
-
 export interface IUserRegister {
   email: string;
   password: string;
@@ -22,9 +21,9 @@ export interface IUserRegister {
   paymentData: any[];
 }
 
-
 export interface IUserContext {
   userRegister: (data: IUserRegister) => Promise<void>;
   userLogin: (formData: IUser) => Promise<void>;
   userLogout: () => void;
+  
 }
