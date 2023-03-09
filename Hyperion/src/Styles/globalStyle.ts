@@ -28,4 +28,8 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         color: var(--grey-4)
     }
+
+    button{
+        cursor: pointer;
+    }
 `
