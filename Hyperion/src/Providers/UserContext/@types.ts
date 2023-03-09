@@ -7,6 +7,10 @@ export interface IUser {
   password: string;
   name: string;
   age: number;
+  id: number;
+  isAdmin: boolean;
+  cart: any[];
+  paymentData: any[];
 }
 
 
@@ -16,10 +20,6 @@ export interface IUserRegister {
   confirmPassword: string;
   name: string;
   age: number;
-  id: number;
-  isAdmin: boolean;
-  cart: any[];
-  paymentData: any[];
 }
 
 
@@ -27,4 +27,5 @@ export interface IUserContext {
   userRegister: (data: IUserRegister) => Promise<void>;
   userLogin: (formData: IUser) => Promise<void>;
   userLogout: () => void;
+  user: IUser | null
 }

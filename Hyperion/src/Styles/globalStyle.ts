@@ -25,6 +25,6 @@ export const GlobalStyle = createGlobalStyle`
         max-width: 1200px;
         margin: 0 auto;
         box-sizing: border-box;
-        color: var(--grey-0)
+        color: var(--grey-4)
     }
 `

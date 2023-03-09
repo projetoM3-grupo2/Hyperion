@@ -4,7 +4,6 @@ import { GlobalStyle } from "./Styles/globalStyle";
 
 export const App = () => (
   <UserProvider>
-    <GlobalStyle />
     <RoutesApp />
   </UserProvider>
 );
