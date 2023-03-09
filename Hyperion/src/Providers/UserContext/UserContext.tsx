@@ -2,7 +2,12 @@ import { createContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { api } from "../../Services/api";
-import { IDefaultProvidersProps, IUser, IUserContext, IUserRegister } from "./@types";
+import {
+  IDefaultProvidersProps,
+  IUser,
+  IUserContext,
+  IUserRegister,
+} from "./@types";
 
 export const UserContext = createContext({} as IUserContext);
 
@@ -10,7 +15,6 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
   const [user, setUser] = useState<IUser | null>(null);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-
 
   const userRegister = async (data: IUserRegister) => {
     try {
@@ -25,13 +29,12 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
     }
   };
 
-
   const userLogin = async (formData: IUser) => {
     try {
       const response = await api.post("/login", formData);
       setUser(response.data);
-      if(response.data.isAdmin){
-        navigate("/dashboard");       
+      if (response.data.isAdmin) {
+        navigate("/dashboard");
       }
       toast.success("Usuário logado com sucesso!");
     } catch (error) {
@@ -47,7 +50,7 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
   };
 
   return (
-    <UserContext.Provider value={{ userLogin, userLogout, userRegister}}>
+    <UserContext.Provider value={{ userLogin, userLogout, userRegister }}>
       {children}
     </UserContext.Provider>
   );
