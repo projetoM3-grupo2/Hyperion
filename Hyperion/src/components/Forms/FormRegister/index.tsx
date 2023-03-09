@@ -4,7 +4,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { IUserRegister } from "../../../Providers/UserContext/@types";
 import { UserContext } from "../../../Providers/UserContext/UserContext";
 import { schemaRegister } from "../schemas/registerSchemas";
-import { Input } from "../Input";
+import { BaseInput } from "../Input";
 
 export const FormRegister = () => {
   const {
@@ -26,40 +26,35 @@ export const FormRegister = () => {
 
   return(
   <form onSubmit={handleSubmit(submit)} >
-      <Input
+      <BaseInput
         type='text'
-        label='Nome'
         register={register('name')}
-        error={errors.name}
-      />
+        error={errors.name} label={""}      />
 
-      <Input
+      <BaseInput
         type='text'
-        label='Nome'
         register={register('age')}
-        error={errors.age}
-      />
+        error={errors.age} label={""}      />
 
-      <Input
+      <BaseInput
         type='email'
-        label='Email'
         register={register('email')}
-        error={errors.email}
-      />
+        error={errors.email} label={""}      />
 
-      <Input
+      <BaseInput
         type='password'
         label='Senha'
         register={register('password')}
         error={errors.password}
       />
 
-      <Input
+      <BaseInput
         type='password'
         label='Confirmar Senha'
         register={register('confirmPassword')}
         error={errors.confirmPassword}
       />
+      <button type="submit" >Cadastrar</button>
   </form>
 
   )

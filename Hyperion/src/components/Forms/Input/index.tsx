@@ -1,4 +1,4 @@
-import { TextField } from "@mui/material";
+import { Input } from '@chakra-ui/react'
 import { FieldError, UseFormRegisterReturn } from "react-hook-form";
 import { StyledFieldset } from "./styled";
 
@@ -10,11 +10,13 @@ interface IInputProps {
   error?: FieldError;
 }
 
-export const Input = ({ label, type, error, register }: IInputProps) => {
+export const BaseInput = ({ type, error, register }: IInputProps) => {
   return (
     <StyledFieldset>
-      <TextField label={label} type={type} {...register} />
+      <Input  type={type} {...register} />
       {error && (<p> {error?.message}</p>)}
     </StyledFieldset>
   );
 };
+export { Input };
+
