@@ -4,9 +4,9 @@ import { IIconButtonProps } from "./type";
 export const IconBtn = ({selectedIcon}:IIconButtonProps) => {
   return (
     <IconButton
-      variant="outline"
-      colorScheme="pink.500"
-      aria-label="Call Sage"
+      variant="solid"
+      colorScheme="pink"
+      aria-label="cart"
       fontSize="20px"
       icon={selectedIcon}
     />

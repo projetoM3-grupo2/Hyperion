@@ -1,6 +1,6 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: "http://localhost:3003/",
-  timeout: 5000,
+  baseURL: "https://hyperion-api.onrender.com/",
+  timeout: 15000,
 });

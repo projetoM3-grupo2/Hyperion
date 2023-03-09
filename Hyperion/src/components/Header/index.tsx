@@ -2,17 +2,31 @@ import { useContext } from "react";
 import { UserContext } from "../../Providers/UserContext/UserContext";
 import { GenericAvatar } from "../Avatar";
 import { IconBtn } from "../IconButton";
-import {AiOutlineShoppingCart} from 'react-icons/ai'
+import { GrCart } from "react-icons/gr";
+import { HeaderContainer } from "./style";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Header = () => {
   const { user } = useContext(UserContext);
+  const navigate = useNavigate();
   return (
-    <div>
-      <h1>Hyperion</h1>
+    <HeaderContainer>
+      <div>
+      <Link to={"/"}>Home</Link>
+      <Link className="gamestore" to={"/"}>GameStore</Link>
+      <Link to={"/"}>News</Link>
+      </div>
       <nav>
-        <IconBtn selectedIcon={<AiOutlineShoppingCart/>}/>
-        {user ? <GenericAvatar /> : <button>Cadastrar</button> && <button>Login</button>}
+        <IconBtn selectedIcon={<GrCart color="white"/>}/>
+        {user ? (
+          <GenericAvatar />
+        ) : (
+          <>
+            <button onClick={() => navigate("/register")}>Cadastrar</button>
+            <button onClick={() => navigate("/login")}>Login</button>
+          </>
+        )}
       </nav>
-    </div>
+    </HeaderContainer>
   );
 };
