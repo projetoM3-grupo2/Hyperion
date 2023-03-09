@@ -3,8 +3,9 @@ import { useContext } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { IUser } from "../../../Providers/UserContext/@types";
 import { UserContext } from "../../../Providers/UserContext/UserContext";
-import { Input } from "../Input";
+import { BaseInput } from "../Input";
 import { schemaLogin } from "../schemas/loginSchemas";
+import { StyledSection } from "./styled";
 
 export const FormLogin = () => {
   const {
@@ -23,20 +24,24 @@ export const FormLogin = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(submit)}>
-      <Input
-        label="Email"
-        type="email"
-        error={errors.email}
-        register={register("email")}
-      />
-      <Input
-        label="Senha"
-        type="password"
-        error={errors.password}
-        register={register("password")}
-      />
-      <button type="submit">Entrar</button>
-    </form>
+    <StyledSection>
+        <form onSubmit={handleSubmit(submit)}>
+        <span>おかえり</span>
+          <h1>Bem vindo de volta!</h1>
+          <BaseInput
+            type="email"
+            error={errors.email}
+            register={register("email")}
+            label={""}
+          />
+          <BaseInput
+            type="password"
+            error={errors.password}
+            register={register("password")}
+            label={""}
+          />
+          <button type="submit">Entrar</button>
+        </form>
+    </StyledSection>
   );
 };
