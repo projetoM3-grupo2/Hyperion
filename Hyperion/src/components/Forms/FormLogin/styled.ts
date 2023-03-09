@@ -11,6 +11,12 @@ export const StyledSection = styled.section`
   justify-content: center;
   align-items: center;
 
+  padding: 30px;
+
+  .imageLogin {
+    display: none;
+  }
+
   span {
     color: var(--grey-0);
     font-size: var(--Titles);
@@ -21,7 +27,6 @@ export const StyledSection = styled.section`
     background-color: var(--grey-4);
 
     width: 90%;
-    max-width: 600px;
 
     padding: 30px 10px 30px 10px;
 
@@ -30,6 +35,7 @@ export const StyledSection = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 
     gap: 20px;
   }
@@ -44,12 +50,43 @@ export const StyledSection = styled.section`
   }
 
   button {
-    width: 94.36px;
+    width: 100%;
     height: 38.73px;
 
     background-color: var(--primary-color);
     color: var(--grey-0);
 
     border-radius: var(--default-border);
+  }
+
+  @media (min-width: 1000px) {
+    .imageLogin {
+      display: block;
+      width: 60%;
+    }
+
+    form {
+      width: 40%;
+      padding: 50px;
+      gap: 26px;
+    }
+  }
+`;
+
+export const StyledDivLoginPage = styled.div`
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: var(--grey-4);
+  border-radius: var(--border-secondary);
+
+  @media (min-width: 1000px) {
+    width: 90%;
+    max-width: 1200px;
+    flex-direction: row;
+    justify-content: space-between;
   }
 `;
