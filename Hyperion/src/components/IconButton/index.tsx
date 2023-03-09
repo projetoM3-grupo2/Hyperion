@@ -1,13 +1,14 @@
 import { IconButton } from "@chakra-ui/react";
+import { IIconButtonProps } from "./type";
 
-export const IconBtn = () => {
+export const IconBtn = ({selectedIcon}:IIconButtonProps) => {
   return (
     <IconButton
       variant="outline"
-      colorScheme="teal"
+      colorScheme="pink.500"
       aria-label="Call Sage"
       fontSize="20px"
-      icon={undefined}
+      icon={selectedIcon}
     />
   );
 };

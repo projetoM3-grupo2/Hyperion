@@ -1,9 +1,9 @@
-import { Skeleton, SkeletonCircle, SkeletonText } from "@chakra-ui/react";
+import { Skeleton} from "@chakra-ui/react";
 
 export const DefaultSkeleton = () => {
   <>
-    <Skeleton height="20px" />
-    <Skeleton height="20px" />
-    <Skeleton height="20px" />
+    <Skeleton color={"gray.300"} height="20px" />
+    <Skeleton color={"gray.500"} height="20px" />
+    <Skeleton color={"gray.700"} height="20px" />
   </>;
 };
