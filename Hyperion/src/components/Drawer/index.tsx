@@ -12,7 +12,7 @@ import {
   } from '@chakra-ui/react'
 import React from 'react'
 
-  export const DrawerExample = () => {
+  export const GenericDrawer = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = React.useRef<HTMLButtonElement>(null)
   
@@ -26,6 +26,7 @@ import React from 'react'
           placement='right'
           onClose={onClose}
           finalFocusRef={btnRef}
+          
         >
           <DrawerOverlay />
           <DrawerContent>
