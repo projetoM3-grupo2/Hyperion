@@ -38,7 +38,7 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
           return setLoading(false);
         }
       }
-      navigate("/");
+      
     };
 
     userAutoLoad();
