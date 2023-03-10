@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { api } from "../../Services/api";
@@ -15,6 +15,33 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
   const [user, setUser] = useState<IUser | null>(null);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem("@TOKEN");
+    const id = localStorage.getItem("@USERID");
+    const userAutoLoad = async () => {
+      if (token) {
+        try {
+          const response = await api.get(`/users/${id}`, {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          });
+          setUser(response.data);
+          return navigate("/dashboard");
+        } catch (error) {
+          console.log(error);
+          localStorage.removeItem("@TOKEN");
+          return navigate("/");
+        } finally {
+          return setLoading(false);
+        }
+      }
+      navigate("/");
+    };
+
+    userAutoLoad();
+  }, []);
 
   const userRegister = async (data: IUserRegister) => {
     try {
@@ -33,6 +60,9 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
     try {
       const response = await api.post("/login", formData);
       setUser(response.data);
+      localStorage.setItem("@TOKEN", response.data.accessToken);
+      localStorage.setItem("@USERID", response.data.user.id);
+      console.log(response.data);
       if (response.data) {
         navigate("/dashboard");
       }
