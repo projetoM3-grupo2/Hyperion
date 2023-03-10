@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledGameCard = styled.li`
-  min-width: 240px;
+  min-width: 340px;
 
   height: 350px;
 
