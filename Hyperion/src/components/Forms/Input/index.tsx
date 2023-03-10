@@ -8,12 +8,13 @@ interface IInputProps {
   type: "password" | "text" | "email" | "age";
   register: UseFormRegisterReturn<string>;
   error?: FieldError;
+  placeholder: string;
 }
 
-export const BaseInput = ({ type, error, register }: IInputProps) => {
+export const BaseInput = ({ type, error, register, placeholder }: IInputProps) => {
   return (
     <StyledFieldset>
-      <Input  type={type} {...register} />
+      <Input  type={type} {...register} placeholder={placeholder}/>
       {error && (<p> {error?.message}</p>)}
     </StyledFieldset>
   );

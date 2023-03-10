@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledSection = styled.section`
+export const StyledSectionRegister = styled.section`
   width: 100vw;
   height: 100vh;
 
@@ -15,14 +15,8 @@ export const StyledSection = styled.section`
 
   padding: 30px;
 
-  .imageLogin {
+  .imageRegister {
     display: none;
-  }
-
-  span {
-    color: var(--grey-0);
-    font-size: var(--Titles);
-    font-weight: 700;
   }
 
   form {
@@ -60,7 +54,7 @@ export const StyledSection = styled.section`
   }
 
   @media (min-width: 1000px) {
-    .imageLogin {
+    .imageRegister {
       display: block;
       width: 60%;
     }
@@ -73,17 +67,7 @@ export const StyledSection = styled.section`
   }
 `;
 
-export const Overlay = styled.div`
-  width: 100vw;
-  height: 100vh;
-
-  position: absolute;
-  z-index: 1;
-
-  background-color: rgba(0, 0, 0, 0.8);
-`;
-
-export const StyledDivLoginPage = styled.div`
+export const StyledDivRegisterPage = styled.div`
   width: 85%;
   display: flex;
   flex-direction: column;
