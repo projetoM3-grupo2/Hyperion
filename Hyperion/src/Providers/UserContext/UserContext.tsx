@@ -42,7 +42,7 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
     };
 
     userAutoLoad();
-  }, []);
+  }, [user]);
 
   const userRegister = async (data: IUserRegister) => {
     try {
@@ -76,6 +76,8 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
   };
 
   const userLogout = () => {
+    localStorage.removeItem("@TOKEN")
+    localStorage.removeItem("@USERID")
     navigate("/");
     toast.success("Usuário deslogado com sucesso!");
   };
