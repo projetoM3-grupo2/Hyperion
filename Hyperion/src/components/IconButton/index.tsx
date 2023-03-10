@@ -4,11 +4,12 @@ import { IIconButtonProps } from "./type";
 export const IconBtn = ({selectedIcon}:IIconButtonProps) => {
   return (
     <IconButton
-      variant="solid"
+      variant="unstyled"
       colorScheme="pink"
       aria-label="cart"
       fontSize="20px"
       icon={selectedIcon}
+      
     />
   );
 };
