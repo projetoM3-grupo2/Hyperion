@@ -5,8 +5,6 @@ import { Card } from "./Card";
 export const CardList = () => {
   const { games, addProduct } = useContext(GameContext);
 
-  console.log(games);
-
   return (
     <ul>
       <>
