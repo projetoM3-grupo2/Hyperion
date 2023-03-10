@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
-
 export const StyledSectionRegister = styled.section`
   width: 100vw;
   height: 100vh;
+
   background-image: url("https://uploaddeimagens.com.br/images/004/384/679/original/back.png?1678453845");
   background-repeat: no-repeat;
   background-size: cover;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,11 +15,9 @@ export const StyledSectionRegister = styled.section`
 
   padding: 30px;
 
-  .imageLogin {
+  .imageRegister {
     display: none;
   }
-
-
 
   form {
     background-color: var(--grey-4);
@@ -34,13 +33,11 @@ export const StyledSectionRegister = styled.section`
     align-items: center;
     justify-content: center;
 
-    gap: 20px;
+    gap: 25px;
   }
 
   h1 {
     color: var(--grey-0);
-
-    padding-bottom: 20px;
 
     font-size: var(--Titles);
     font-weight: 700;
@@ -57,7 +54,7 @@ export const StyledSectionRegister = styled.section`
   }
 
   @media (min-width: 1000px) {
-    .imageLogin {
+    .imageRegister {
       display: block;
       width: 60%;
     }

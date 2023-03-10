@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const StyledSection = styled.section`
   width: 100vw;
   height: 100vh;
-  
 
   background-image: url("https://uploaddeimagens.com.br/images/004/384/679/original/back.png?1678453845");
   background-repeat: no-repeat;
@@ -46,7 +45,6 @@ export const StyledSection = styled.section`
   h1 {
     color: var(--grey-0);
 
-
     font-size: var(--Titles);
     font-weight: 700;
   }
@@ -75,19 +73,15 @@ export const StyledSection = styled.section`
   }
 `;
 
-export const Overlay = styled.div `
+export const Overlay = styled.div`
   width: 100vw;
   height: 100vh;
-  
+
   position: absolute;
   z-index: 1;
 
-
-
   background-color: rgba(0, 0, 0, 0.8);
-`
-
-
+`;
 
 export const StyledDivLoginPage = styled.div`
   width: 85%;

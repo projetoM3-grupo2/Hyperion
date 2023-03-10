@@ -73,8 +73,9 @@ export const FormRegister = () => {
           />
           <button type="submit">Cadastrar</button>
         </form>
-        <img src={imagemLogin} alt="" className="imageRegister" />
+        <img src={imagemLogin} alt="imageRegister" className="imageRegister" />
       </StyledDivRegisterPage>
+
       <Overlay />
     </StyledSectionRegister>
   );
