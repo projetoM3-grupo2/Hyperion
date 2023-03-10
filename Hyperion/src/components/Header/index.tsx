@@ -12,12 +12,14 @@ export const Header = () => {
   return (
     <HeaderContainer>
       <div>
-      <Link to={"/"}>Home</Link>
-      <Link className="gamestore" to={"/"}>GameStore</Link>
-      <Link to={"/"}>News</Link>
+        <Link to={"/"}>Home</Link>
+        <Link className="gamestore" to={"/"}>
+          GameStore
+        </Link>
+        <Link to={"/"}>News</Link>
       </div>
       <nav>
-        <IconBtn selectedIcon={<GrCart color="white"/>}/>
+        <IconBtn selectedIcon={<GrCart color="white" />} />
         {user ? (
           <GenericAvatar />
         ) : (
