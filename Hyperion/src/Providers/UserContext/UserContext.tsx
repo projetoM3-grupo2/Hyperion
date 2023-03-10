@@ -27,6 +27,7 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
               Authorization: `Bearer ${token}`,
             },
           });
+          
           setUser(response.data);
           return navigate("/dashboard");
         } catch (error) {
