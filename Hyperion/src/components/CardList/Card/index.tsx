@@ -1,11 +1,18 @@
-export const Card = () => {
+import { ICardProps } from "../../../Providers/GameContext/@types";
+
+export const Card = ({ product, addProduct }: ICardProps) => {
   return (
     <li>
-      <img src="" alt="" />
-      <h4>Nome do jogo</h4>
-      <span>Ps4</span>
+      <img src={product.image} alt="game image" />
+      <h4>{product.name}</h4>
+      <span>{product.sistem}</span>
       <div>
-        <p>R$200</p>
+        {product.categories.map((category) => (
+          <span> {category.label} |</span>
+        ))}
+      </div>
+      <div>
+        <p>R$ {product.price}</p>
         <button>Comprar</button>
       </div>
     </li>
