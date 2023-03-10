@@ -15,8 +15,6 @@ export const GameProvider = ({ children }: IDefaultProvidersProps) => {
     try {
       const response = await api.get("/products");
       setGames(response.data);
-      console.log(response);
-      console.log(games);
     } catch (error) {
       console.log(error);
     }
@@ -24,7 +22,6 @@ export const GameProvider = ({ children }: IDefaultProvidersProps) => {
 
   useEffect(() => {
     getGames();
-    console.log("Aqui");
   }, []);
 
   const getCategories = async () => {

@@ -1,20 +1,27 @@
 import { ICardProps } from "../../../Providers/GameContext/@types";
+import { StyledGameCard } from "./style";
 
 export const Card = ({ product, addProduct }: ICardProps) => {
   return (
-    <li>
+    <StyledGameCard>
       <img src={product.image} alt="game image" />
-      <h4>{product.name}</h4>
-      <span>{product.sistem}</span>
-      <div>
-        {product.categories.map((category) => (
-          <span> {category.label} |</span>
-        ))}
+      <div className="info__container">
+        <h4>
+          {product.name.length > 20
+            ? `${product.name.substring(0, 20)}...`
+            : product.name}
+        </h4>
+        <span className="infor__sistem">{product.sistem}</span>
+        <div>
+          {product.categories.map((category) => (
+            <span className="info__category"> {category.label} |</span>
+          ))}
+        </div>
       </div>
-      <div>
+      <div className="footer__container">
         <p>R$ {product.price}</p>
-        <button>Comprar</button>
+        <button onClick={() => addProduct(product)}>Comprar</button>
       </div>
-    </li>
+    </StyledGameCard>
   );
 };
