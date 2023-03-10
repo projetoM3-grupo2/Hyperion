@@ -5,7 +5,7 @@ import { IUser } from "../../../Providers/UserContext/@types";
 import { UserContext } from "../../../Providers/UserContext/UserContext";
 import { BaseInput } from "../Input";
 import { schemaLogin } from "../schemas/loginSchemas";
-import { StyledDivLoginPage, StyledSection } from "./styled";
+import { StyledDivLoginPage, Overlay, StyledSection } from "./styled";
 import imagemLogin from "../../../assets/img/LoginPage.svg";
 
 export const FormLogin = () => {
@@ -26,27 +26,34 @@ export const FormLogin = () => {
 
   return (
     <StyledSection>
-<StyledDivLoginPage>
 
-      <img src={imagemLogin} alt="" className="imageLogin" />
-      <form onSubmit={handleSubmit(submit)}>
-        <span>おかえり</span>
-        <h1>Bem vindo de volta!</h1>
-        <BaseInput
-          type="email"
-          error={errors.email}
-          register={register("email")}
-          label={""}
-        />
-        <BaseInput
-          type="password"
-          error={errors.password}
-          register={register("password")}
-          label={""}
-        />
-        <button type="submit">Entrar</button>
-      </form>
-</StyledDivLoginPage>
+      <StyledDivLoginPage>
+
+        <img src={imagemLogin} alt="" className="imageLogin" />
+        <form onSubmit={handleSubmit(submit)}>
+          <span>おかえり</span>
+          <h1>Bem vindo de volta!</h1>
+          <label>Email</label>
+          <BaseInput
+            type="email"
+            error={errors.email}
+            register={register("email")}
+            label={""}
+          />
+          <label>Senha</label>
+          <BaseInput
+            type="password"
+            error={errors.password}
+            register={register("password")}
+            label={""}
+          />
+          <button type="submit">Entrar</button>
+        </form>
+
+      </StyledDivLoginPage>
+      
+      < Overlay />
+
     </StyledSection>
-  );
+    );
 };

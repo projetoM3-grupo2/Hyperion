@@ -26,7 +26,6 @@ export const GlobalStyle = createGlobalStyle`
     * {
         list-style: none;
         box-sizing: border-box;
-        color: var(--grey-4)
     }
 
     button{
