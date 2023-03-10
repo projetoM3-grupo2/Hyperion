@@ -26,9 +26,7 @@ export const FormLogin = () => {
 
   return (
     <StyledSection>
-
       <StyledDivLoginPage>
-
         <img src={imagemLogin} alt="" className="imageLogin" />
         <form onSubmit={handleSubmit(submit)}>
           <span>おかえり</span>
@@ -38,22 +36,22 @@ export const FormLogin = () => {
             type="email"
             error={errors.email}
             register={register("email")}
-            label={""}
+            label={"Email"}
+            placeholder={"Digite seu email"}
           />
           <label>Senha</label>
           <BaseInput
             type="password"
             error={errors.password}
             register={register("password")}
-            label={""}
+            label={"Senha"}
+            placeholder={"Digite sua senha"}
           />
           <button type="submit">Entrar</button>
         </form>
-
       </StyledDivLoginPage>
-      
-      < Overlay />
 
+      <Overlay />
     </StyledSection>
-    );
+  );
 };
