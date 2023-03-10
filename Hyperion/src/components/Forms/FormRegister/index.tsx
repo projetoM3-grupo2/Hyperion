@@ -1,10 +1,13 @@
 import { useContext } from "react";
-import { yupResolver } from '@hookform/resolvers/yup';
+import { yupResolver } from "@hookform/resolvers/yup";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { IUserRegister } from "../../../Providers/UserContext/@types";
 import { UserContext } from "../../../Providers/UserContext/UserContext";
 import { schemaRegister } from "../schemas/registerSchemas";
 import { BaseInput } from "../Input";
+import imagemLogin from "../../../assets/img/RegisterPage.svg";
+import { StyledDivRegisterPage, StyledSectionRegister } from "./styled";
+import { Overlay } from "../FormLogin/styled";
 
 export const FormRegister = () => {
   const {
@@ -23,40 +26,57 @@ export const FormRegister = () => {
     reset();
   };
 
+  return (
+    <StyledSectionRegister>
+      <StyledDivRegisterPage>
+        <form onSubmit={handleSubmit(submit)}>
+          <h1>Criar conta</h1>
 
-  return(
-  <form onSubmit={handleSubmit(submit)} >
-      <BaseInput
-        type='text'
-        register={register('name')}
-        error={errors.name} label={""}      />
+          <BaseInput
+            type="text"
+            register={register("name")}
+            error={errors.name}
+            label={"Nome"}
+            placeholder={"Digite seu nome"}
+          />
 
-      <BaseInput
-        type='text'
-        register={register('age')}
-        error={errors.age} label={""}      />
+          <BaseInput
+            type="text"
+            register={register("age")}
+            error={errors.age}
+            label={"Idade"}
+            placeholder={"Digite sua idade"}
+          />
 
-      <BaseInput
-        type='email'
-        register={register('email')}
-        error={errors.email} label={""}      />
+          <BaseInput
+            type="email"
+            register={register("email")}
+            error={errors.email}
+            label={"Email"}
+            placeholder={"Digite seu email"}
+          />
 
-      <BaseInput
-        type='password'
-        label='Senha'
-        register={register('password')}
-        error={errors.password}
-      />
+          <BaseInput
+            type="password"
+            label="Senha"
+            register={register("password")}
+            error={errors.password}
+            placeholder={"Digite uma senha"}
+          />
 
-      <BaseInput
-        type='password'
-        label='Confirmar Senha'
-        register={register('confirmPassword')}
-        error={errors.confirmPassword}
-      />
-      <button type="submit" >Cadastrar</button>
-  </form>
+          <BaseInput
+            type="password"
+            label="Confirmar Senha"
+            register={register("confirmPassword")}
+            error={errors.confirmPassword}
+            placeholder={"Por favor confirme sua senha"}
+          />
+          <button type="submit">Cadastrar</button>
+        </form>
+        <img src={imagemLogin} alt="imageRegister" className="imageRegister" />
+      </StyledDivRegisterPage>
 
-  )
-  
+      <Overlay />
+    </StyledSectionRegister>
+  );
 };
