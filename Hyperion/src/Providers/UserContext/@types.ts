@@ -25,9 +25,5 @@ export interface IUserContext {
   userRegister: (data: IUserRegister) => Promise<void>;
   userLogin: (formData: IUser) => Promise<void>;
   userLogout: () => void;
-<<<<<<< HEAD
   user: IUser | null
-=======
-  
->>>>>>> 9afb6e5534e1475a28fd897a3cce7a932ee9d8fb
 }
