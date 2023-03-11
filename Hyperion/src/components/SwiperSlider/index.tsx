@@ -12,10 +12,12 @@ import "./styles.css";
 
 // import required modules
 import { FreeMode, Navigation, Thumbs } from "swiper";
+import SwiperCore from "swiper";
+
 import { GameContext } from "../../Providers/GameContext/GameContext";
 
 export function SwiperComp() {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperCore>();
   const { games, addProduct } = useContext(GameContext);
   return (
     <>
@@ -23,12 +25,28 @@ export function SwiperComp() {
         loop={true}
         spaceBetween={10}
         navigation={true}
-        thumbs={{ swiper: thumbsSwiper}}
+        thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper2"
       >
         {games.map((product) => (
           <SwiperSlide key={product.id + 123}>
+            <img src={product.image} alt="Imagem do Produto" />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      <Swiper
+        onSwiper={setThumbsSwiper}
+        loop={true}
+        spaceBetween={10}
+        slidesPerView={4}
+        freeMode={true}
+        watchSlidesProgress={true}
+        modules={[FreeMode, Navigation, Thumbs]}
+        className="mySwiper"
+      >
+       {games.map((product) => (
+          <SwiperSlide key={product.id + 12432}>
             <img src={product.image} alt="Imagem do Produto" />
           </SwiperSlide>
         ))}
