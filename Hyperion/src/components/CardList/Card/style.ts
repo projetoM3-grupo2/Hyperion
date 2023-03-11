@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
 export const StyledGameCard = styled.li`
-  min-width: 340px;
-
-  height: 350px;
+  min-width: 280px;
 
   display: flex;
   flex-direction: column;

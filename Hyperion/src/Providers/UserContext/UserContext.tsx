@@ -27,7 +27,7 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
               Authorization: `Bearer ${token}`,
             },
           });
-          
+
           setUser(response.data);
           return navigate("/dashboard");
         } catch (error) {
@@ -38,7 +38,6 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
           return setLoading(false);
         }
       }
-      
     };
 
     userAutoLoad();
@@ -76,14 +75,16 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
   };
 
   const userLogout = () => {
-    localStorage.removeItem("@TOKEN")
-    localStorage.removeItem("@USERID")
+    localStorage.removeItem("@TOKEN");
+    localStorage.removeItem("@USERID");
     navigate("/");
     toast.success("Usuário deslogado com sucesso!");
   };
 
   return (
-    <UserContext.Provider value={{ userLogin, userLogout, userRegister, user }}>
+    <UserContext.Provider
+      value={{ userLogin, userLogout, userRegister, user, navigate }}
+    >
       {children}
     </UserContext.Provider>
   );

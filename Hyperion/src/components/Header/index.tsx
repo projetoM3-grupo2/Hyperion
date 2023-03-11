@@ -3,7 +3,7 @@ import { UserContext } from "../../Providers/UserContext/UserContext";
 import { IconBtn } from "../IconButton";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import { HeaderContainer } from "./style";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { IconContext } from "react-icons";
 import {
   Avatar,
@@ -18,14 +18,14 @@ import {
   DrawerOverlay,
   useDisclosure,
 } from "@chakra-ui/react";
-import { IGames } from "../../Providers/GameContext/@types";
+import { GameContext } from "../../Providers/GameContext/GameContext";
 
 export const Header = () => {
-  const { user } = useContext(UserContext);
-  const navigate = useNavigate();
+  const { user, navigate } = useContext(UserContext);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef<HTMLButtonElement>(null);
-  const products =  JSON.parse(localStorage.getItem("@PRODUCTLIST") || '{}')
+  const { currentSale } = useContext(GameContext);
+
   return (
     <HeaderContainer>
       <div>
@@ -77,12 +77,12 @@ export const Header = () => {
               "Carrinho de Compras"
             </DrawerHeader>
             <DrawerBody>
-              {products.map((product:IGames)=> (
-              <>
-              <img src={product.image} alt="Imagem do Produto" />
-              <h4>{product.name}</h4>
-              <p>{product.price}</p>
-              </>
+              {currentSale.map((product) => (
+                <li>
+                  <img src={product.image} alt="Imagem do Produto" />
+                  <h4>{product.name}</h4>
+                  <p>{product.price}</p>
+                </li>
               ))}
             </DrawerBody>
             <DrawerFooter>
