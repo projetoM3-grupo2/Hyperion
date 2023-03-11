@@ -9,8 +9,10 @@ export const LandPage = () => {
       <div>
         <Header />
       </div>
+      <section>
       <SwiperComp/>
       <CardList />
+      </section>
     </StyledMainPage>
   );
 };
