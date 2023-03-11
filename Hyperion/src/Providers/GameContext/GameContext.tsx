@@ -20,7 +20,12 @@ export const GameProvider = ({ children }: IDefaultProvidersProps) => {
     }
   };
 
+  const products = localStorage.getItem("@PRODUCTLIST");
+
   useEffect(() => {
+    if (products) {
+      setCurrentSale(JSON.parse(products));
+    }
     getGames();
   }, []);
 
@@ -68,9 +73,19 @@ export const GameProvider = ({ children }: IDefaultProvidersProps) => {
     });
   };
 
+  const amount = currentSale.reduce((a, b) => a + +b.price, 0);
+
   return (
     <GameContext.Provider
-      value={{ games, categories, addProduct, removeProduct, removeAllProduct }}
+      value={{
+        games,
+        categories,
+        addProduct,
+        removeProduct,
+        removeAllProduct,
+        currentSale,
+        amount,
+      }}
     >
       {children}
     </GameContext.Provider>

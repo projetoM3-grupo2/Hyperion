@@ -27,4 +27,6 @@ export interface IGameContext {
   addProduct: (product: IGames) => void;
   removeProduct: (product: IGames) => void;
   removeAllProduct: () => void;
+  currentSale: IGames[];
+  amount: number;
 }
