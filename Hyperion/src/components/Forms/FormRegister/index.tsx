@@ -8,6 +8,7 @@ import { BaseInput } from "../Input";
 import imagemLogin from "../../../assets/img/RegisterPage.svg";
 import { StyledDivRegisterPage, StyledSectionRegister } from "./styled";
 import { Overlay } from "../FormLogin/styled";
+import { Link } from "react-router-dom";
 
 export const FormRegister = () => {
   const {
@@ -72,6 +73,7 @@ export const FormRegister = () => {
             placeholder={"Por favor confirme sua senha"}
           />
           <button type="submit">Cadastrar</button>
+          <Link to={"/login"}>Já possui cadastro ?</Link>
         </form>
         <img src={imagemLogin} alt="imageRegister" className="imageRegister" />
       </StyledDivRegisterPage>

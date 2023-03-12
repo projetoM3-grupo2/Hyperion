@@ -21,7 +21,7 @@ import {
 import { GameContext } from "../../Providers/GameContext/GameContext";
 
 export const Header = () => {
-  const { user, navigate } = useContext(UserContext);
+  const { user, navigate, userLogout } = useContext(UserContext);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef<HTMLButtonElement>(null);
   const { currentSale } = useContext(GameContext);
@@ -49,6 +49,7 @@ export const Header = () => {
           </span>
         </div>
         {user ? (
+          <>
           <Avatar
             size={"sm"}
             name="Dan Abrahmov"
@@ -56,6 +57,20 @@ export const Header = () => {
           >
             <AvatarBadge boxSize="20px" bg="green.500" />
           </Avatar>
+          <Button
+                variant="outline"
+                mr={3}
+                color="pink.900"
+                onClick={() => {
+                  userLogout();
+                  
+                }}
+              >
+                Logout
+              </Button>
+
+          </>
+          
         ) : (
           <div className="btnsLogReg">
             <button onClick={() => navigate("/register")}>Cadastrar</button>
@@ -78,7 +93,7 @@ export const Header = () => {
             </DrawerHeader>
             <DrawerBody>
               {currentSale.map((product) => (
-                <li>
+                <li key={product.id}>
                   <img src={product.image} alt="Imagem do Produto" />
                   <h4>{product.name}</h4>
                   <p>{product.price}</p>
@@ -94,6 +109,7 @@ export const Header = () => {
               >
                 Close
               </Button>
+              
             </DrawerFooter>
           </DrawerContent>
         </Drawer>
