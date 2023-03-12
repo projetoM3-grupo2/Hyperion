@@ -52,6 +52,14 @@ export const StyledSectionRegister = styled.section`
 
     border-radius: var(--default-border);
   }
+  a{
+    color: var(--grey-0);
+  }
+
+  a:hover{
+    border-bottom: solid 1px var(--primary-color);
+  }
+
 
   @media (min-width: 1000px) {
     .imageRegister {

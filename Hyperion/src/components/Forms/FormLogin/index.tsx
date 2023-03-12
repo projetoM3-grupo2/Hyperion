@@ -7,6 +7,7 @@ import { BaseInput } from "../Input";
 import { schemaLogin } from "../schemas/loginSchemas";
 import { StyledDivLoginPage, Overlay, StyledSection } from "./styled";
 import imagemLogin from "../../../assets/img/LoginPage.svg";
+import { Link } from "react-router-dom";
 
 export const FormLogin = () => {
   const {
@@ -48,6 +49,7 @@ export const FormLogin = () => {
             placeholder={"Digite sua senha"}
           />
           <button type="submit">Entrar</button>
+          <Link to={"/register"}>Ainda não possui cadastro ?</Link>
         </form>
       </StyledDivLoginPage>
 

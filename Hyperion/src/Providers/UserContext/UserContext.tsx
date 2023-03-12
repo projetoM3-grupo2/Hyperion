@@ -77,8 +77,8 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
   const userLogout = () => {
     localStorage.removeItem("@TOKEN");
     localStorage.removeItem("@USERID");
-    navigate("/");
     toast.success("Usuário deslogado com sucesso!");
+    navigate("/login");
   };
 
   return (
