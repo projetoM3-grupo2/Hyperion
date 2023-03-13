@@ -7,15 +7,20 @@ export const StyledCardList = styled.ul`
 
   overflow-x: scroll;
 
-  padding: 40px 0;
+  padding-bottom: 40px;
 
-  @media (min-width: 660px) {
+  @media (min-width: 600px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (min-width: 960px) {
+  @media (min-width: 900px) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 900px) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
   }
 `;

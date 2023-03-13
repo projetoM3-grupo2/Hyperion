@@ -70,6 +70,7 @@ export const Header = () => {
                 </MenuItem>
               </MenuList>
             </Menu>
+
           </>
         ) : (
           <div className="btnsLogReg">
