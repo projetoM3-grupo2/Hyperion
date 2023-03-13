@@ -19,12 +19,14 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { GameContext } from "../../Providers/GameContext/GameContext";
+import { CardCartList } from "../CartList/CardCartList";
 
 export const Header = () => {
   const { user, navigate, userLogout } = useContext(UserContext);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef<HTMLButtonElement>(null);
-  const { currentSale } = useContext(GameContext);
+  const { currentSale, removeProduct, removeAllProduct, amount } =
+    useContext(GameContext);
 
   return (
     <HeaderContainer>
@@ -90,11 +92,7 @@ export const Header = () => {
             </DrawerHeader>
             <DrawerBody>
               {currentSale.map((product) => (
-                <li key={product.id}>
-                  <img src={product.image} alt="Imagem do Produto" />
-                  <h4>{product.name}</h4>
-                  <p>{product.price}</p>
-                </li>
+                <CardCartList product={product} removeProduct={removeProduct} />
               ))}
             </DrawerBody>
             <DrawerFooter>

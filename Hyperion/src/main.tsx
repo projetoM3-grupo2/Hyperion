@@ -9,7 +9,7 @@ import { GlobalStyle } from "./Styles/globalStyle";
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
-    <GlobalStyle/>
+      <GlobalStyle />
       <ChakraProvider theme={mainTheme}>
         <App />
       </ChakraProvider>
