@@ -66,11 +66,13 @@ export const GameProvider = ({ children }: IDefaultProvidersProps) => {
   };
 
   const removeAllProduct = () => {
-    setCurrentSale([]);
-    localStorage.removeItem("@PRODUCTLIST");
-    toast.success("Carrinho limpo!", {
-      autoClose: 1000,
-    });
+    if (currentSale.length > 0) {
+      setCurrentSale([]);
+      localStorage.removeItem("@PRODUCTLIST");
+      toast.success("Todos os Games removidos!", {
+        autoClose: 1000,
+      });
+    }
   };
 
   const amount = currentSale.reduce((a, b) => a + +b.price, 0);

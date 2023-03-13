@@ -24,6 +24,7 @@ import {
 } from "@chakra-ui/react";
 import { GameContext } from "../../Providers/GameContext/GameContext";
 import { CardCartList } from "../CartList/CardCartList";
+import { CartTotalValue } from "../CartList/CardCartList/CartValueTotal";
 
 export const Header = () => {
   const { user, navigate, userLogout } = useContext(UserContext);
@@ -96,9 +97,10 @@ export const Header = () => {
             </DrawerHeader>
             <DrawerBody>
               {currentSale.map((product) => (
-                <CardCartList product={product} removeProduct={removeProduct} />
+                <CardCartList key={product.id} product={product} removeProduct={removeProduct} />
               ))}
             </DrawerBody>
+            <CartTotalValue/>
             <DrawerFooter>
               <Button
                 variant="outline"

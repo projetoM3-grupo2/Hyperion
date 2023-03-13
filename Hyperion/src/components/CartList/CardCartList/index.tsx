@@ -1,4 +1,3 @@
-import React from "react";
 import { ICardCartProps } from "../../../Providers/GameContext/@types";
 import { StyledCardList } from "./style";
 

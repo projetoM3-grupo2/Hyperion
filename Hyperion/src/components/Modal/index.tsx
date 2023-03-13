@@ -15,14 +15,12 @@ export const GenericModal = () => {
   return (
     <>
       <Button onClick={onOpen}>Open Modal</Button>
-
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Modal Title</ModalHeader>
           <ModalCloseButton />
           <ModalBody></ModalBody>
-
           <ModalFooter>
             <Button colorScheme="blue" mr={3} onClick={onClose}>
               Close
@@ -33,4 +31,4 @@ export const GenericModal = () => {
       </Modal>
     </>
   );
-}
+};

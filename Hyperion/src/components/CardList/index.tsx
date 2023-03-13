@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { GameContext } from "../../Providers/GameContext/GameContext";
 import { Card } from "./Card";
-import { StyledCardList } from "./sytled";
+import { StyledCardList } from "./syted";
 
 export const CardList = () => {
   const { games, addProduct } = useContext(GameContext);
