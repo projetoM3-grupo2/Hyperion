@@ -5,7 +5,7 @@ export const StyledCardList = styled.ul`
 
   gap: 20px;
 
-  overflow-x: scroll;
+  overflow-x: auto;
 
   padding-bottom: 40px;
 

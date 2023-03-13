@@ -1,18 +1,18 @@
 import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
-display: flex;
-min-width: 100%;
-max-width: 1200px;
-background-color: transparent;
-align-items: center;
-padding: 10px;
-justify-content: space-between;
-z-index: 100000;
+  display: flex;
+  min-width: 100%;
+  max-width: 1200px;
+  background-color: transparent;
+  align-items: center;
+  padding: 10px;
+  justify-content: space-between;
+  z-index: 100000;
+  top: 0;
 
   display: flex;
   flex-direction: column;
-
 
   min-width: 100%;
   max-width: 1200px;
@@ -50,7 +50,7 @@ z-index: 100000;
     margin-top: 15px;
   }
   .chakra-avatar__badge {
-    transform: translate(30%, 70%);
+    transform: translate(40%, 70%);
     width: 15px;
     height: 15px;
   }
@@ -62,6 +62,9 @@ z-index: 100000;
     color: white;
   }
 
+  .menuPos {
+    transform: translate(0%, -10%);
+  }
   .cartContainer > span {
     background-color: var(--primary-color);
     height: 18px;
@@ -94,14 +97,12 @@ z-index: 100000;
     align-items: center;
   }
 
+  .chakra-menu__menu-list css-1z05u95 {
+  }
 
-.chakra-menu__menu-list css-1z05u95{
-    
-}
-
-.css-r6z5ec{
+  .css-r6z5ec {
     z-index: 10;
-}
+  }
 
   @media (min-width: 600px) {
     flex-direction: row;
