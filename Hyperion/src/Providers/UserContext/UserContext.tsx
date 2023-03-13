@@ -50,7 +50,7 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
       navigate("/");
       toast.success("Usuário registrado com sucesso!");
     } catch (error) {
-      console.error(error)
+      console.error(error);
       toast.error("Ocorreu algum erro, tente novamente!");
     } finally {
       setLoading(false);
@@ -79,7 +79,7 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
     toast.success("Usuário deslogado com sucesso!");
     setUser(null);
     navigate("/login");
-    console.log("oi")
+    console.log("oi");
   };
 
   return (

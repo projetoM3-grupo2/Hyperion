@@ -49,7 +49,7 @@ export const Header = () => {
             }
           />
           <span>
-            <p>9</p>
+            <p>{currentSale.length}</p>
           </span>
         </div>
         {user ? (
