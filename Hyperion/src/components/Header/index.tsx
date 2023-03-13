@@ -16,6 +16,10 @@ import {
   DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
   useDisclosure,
 } from "@chakra-ui/react";
 import { GameContext } from "../../Providers/GameContext/GameContext";
@@ -50,27 +54,34 @@ export const Header = () => {
         </div>
         {user ? (
           <>
-          <Avatar
-            size={"sm"}
-            name="Dan Abrahmov"
-            src="https://bit.ly/dan-abramov"
-          >
-            <AvatarBadge boxSize="20px" bg="green.500" />
-          </Avatar>
-          <Button
-                variant="outline"
-                mr={3}
-                color="pink.900"
-                onClick={() => {
-                  userLogout();
-                  
-                }}
-              >
+            <Menu>
+              <MenuButton>
+                <Avatar
+                  size={"sm"}
+                  name="Dan Abrahmov"
+                  src="https://bit.ly/dan-abramov"
+                >
+                  <AvatarBadge boxSize="20px" bg="green.500" />
+                </Avatar>
+              </MenuButton>
+              <MenuList bg={"gray.900"}>
+                <MenuItem onClick={userLogout} bg={"gray.900"}>
                 Logout
-              </Button>
+                </MenuItem>
+              </MenuList>
+            </Menu>
 
+            {/* <Button
+              variant="outline"
+              mr={3}
+              color="pink.900"
+              onClick={() => {
+                userLogout();
+              }}
+            >
+              Logout
+            </Button> */}
           </>
-          
         ) : (
           <div className="btnsLogReg">
             <button onClick={() => navigate("/register")}>Cadastrar</button>
@@ -109,7 +120,6 @@ export const Header = () => {
               >
                 Close
               </Button>
-              
             </DrawerFooter>
           </DrawerContent>
         </Drawer>
