@@ -19,7 +19,7 @@ export const StyledCardList = styled.ul`
     grid-template-columns: repeat(3, 1fr);
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 1200px) {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
   }

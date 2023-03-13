@@ -10,7 +10,6 @@ export const StyledGameCard = styled.li`
   gap: 5px;
   padding: 10px;
 
-  border: 1px solid black;
   border-radius: 4px;
 
   background-color: var(--secondary-color);

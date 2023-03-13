@@ -3,7 +3,7 @@ import { StyledGameCard } from "./style";
 
 export const Card = ({ product, addProduct }: ICardProps) => {
   return (
-    <StyledGameCard key={product.id}>
+    <StyledGameCard>
       <img src={product.image} alt="game image" />
       <div className="info__container">
         <h4>
@@ -14,7 +14,10 @@ export const Card = ({ product, addProduct }: ICardProps) => {
         <span className="infor__sistem">{product.sistem}</span>
         <div>
           {product.categories.map((category) => (
-            <span className="info__category"> {category.label} |</span>
+            <span className="info__category" key={category.categoryId}>
+              {" "}
+              {category.label} |
+            </span>
           ))}
         </div>
       </div>
