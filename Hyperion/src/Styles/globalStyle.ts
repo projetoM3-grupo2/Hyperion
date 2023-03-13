@@ -1,4 +1,4 @@
-import {createGlobalStyle} from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -48,4 +48,4 @@ export const GlobalStyle = createGlobalStyle`
   .chakra-modal__header{
     margin-top: 15px;
   }
-`
+`;

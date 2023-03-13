@@ -6,16 +6,15 @@ export const StyledCardTotalValue = styled.div`
   flex-direction: column;
   background-color: var(--grey-4);
 
-    div {
-        display: flex;
-        justify-content: space-between;
-        padding: 10px;
-    }
-    
+  div {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
 
-    button{
-        color: var(--primary-color);
-        font-size: 1rem;
-        margin-bottom: 10px;
-    }
+  button {
+    color: var(--primary-color);
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
 `;

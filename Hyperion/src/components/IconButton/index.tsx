@@ -1,7 +1,7 @@
 import { IconButton } from "@chakra-ui/react";
 import { IIconButtonProps } from "./type";
 
-export const IconBtn = ({selectedIcon}:IIconButtonProps) => {
+export const IconBtn = ({ selectedIcon }: IIconButtonProps) => {
   return (
     <IconButton
       variant="unstyled"
@@ -9,7 +9,6 @@ export const IconBtn = ({selectedIcon}:IIconButtonProps) => {
       aria-label="cart"
       fontSize="20px"
       icon={selectedIcon}
-      
     />
   );
 };

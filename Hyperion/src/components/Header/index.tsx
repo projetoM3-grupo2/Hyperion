@@ -73,7 +73,6 @@ export const Header = () => {
                 </MenuItem>
               </MenuList>
             </Menu>
-
           </>
         ) : (
           <div className="btnsLogReg">
@@ -97,10 +96,14 @@ export const Header = () => {
             </DrawerHeader>
             <DrawerBody className="drawer_body">
               {currentSale.map((product) => (
-                <CardCartList key={product.id} product={product} removeProduct={removeProduct} />
+                <CardCartList
+                  key={product.id}
+                  product={product}
+                  removeProduct={removeProduct}
+                />
               ))}
             </DrawerBody>
-            <CartTotalValue/>
+            <CartTotalValue />
             <DrawerFooter>
               <Button
                 variant="outline"

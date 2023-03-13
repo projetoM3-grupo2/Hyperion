@@ -13,7 +13,9 @@ export const CartTotalValue = () => {
             <span>Total: </span>
             <span>R$ {amount} </span>
           </>
-        ) : <p>Carrinho vazio</p>}
+        ) : (
+          <p>Carrinho vazio</p>
+        )}
       </div>
 
       <button type="button" onClick={() => removeAllProduct()}>
@@ -22,4 +24,3 @@ export const CartTotalValue = () => {
     </StyledCardTotalValue>
   );
 };
-

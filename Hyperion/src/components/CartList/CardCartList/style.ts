@@ -10,7 +10,7 @@ export const StyledCardList = styled.li`
     object-fit: contain;
   }
 
-  div{
+  div {
     display: flex;
     flex-direction: column;
     gap: 10px;
