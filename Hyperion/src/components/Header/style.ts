@@ -8,6 +8,7 @@ background-color: transparent;
 align-items: center;
 padding: 10px;
 justify-content: space-between;
+z-index: 100000;
 
 .gamestore{
     color: var(--primary-color);
@@ -73,6 +74,12 @@ span > p{
     align-items: center;
 }
 
+.chakra-menu__menu-list css-1z05u95{
+    
+}
 
+.css-r6z5ec{
+    z-index: 10;
+}
 
 `

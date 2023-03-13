@@ -66,21 +66,10 @@ export const Header = () => {
               </MenuButton>
               <MenuList bg={"gray.900"}>
                 <MenuItem onClick={userLogout} bg={"gray.900"}>
-                Logout
+                  Logout
                 </MenuItem>
               </MenuList>
             </Menu>
-
-            {/* <Button
-              variant="outline"
-              mr={3}
-              color="pink.900"
-              onClick={() => {
-                userLogout();
-              }}
-            >
-              Logout
-            </Button> */}
           </>
         ) : (
           <div className="btnsLogReg">
@@ -103,8 +92,8 @@ export const Header = () => {
               "Carrinho de Compras"
             </DrawerHeader>
             <DrawerBody>
-              {currentSale.map((product) => (
-                <li key={product.id}>
+              {currentSale.map((product, index) => (
+                <li key={`Card${index}`}>
                   <img src={product.image} alt="Imagem do Produto" />
                   <h4>{product.name}</h4>
                   <p>{product.price}</p>
