@@ -21,6 +21,11 @@ export interface ICardProps {
   addProduct: (product: IGames) => void;
 }
 
+export interface ICardCartProps {
+  product: IGames;
+  removeProduct: (product: IGames) => void;
+}
+
 export interface IGameContext {
   games: IGames[];
   categories: ICategories[];
