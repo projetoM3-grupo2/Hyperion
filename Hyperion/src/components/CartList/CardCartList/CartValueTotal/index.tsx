@@ -8,8 +8,12 @@ export const CartTotalValue = () => {
   return (
     <StyledCardTotalValue>
       <div>
-        <span>Total: </span>
-        <span>R$ {amount} </span>
+        {amount ? (
+          <>
+            <span>Total: </span>
+            <span>R$ {amount} </span>
+          </>
+        ) : null}
       </div>
 
       <button type="button" onClick={() => removeAllProduct()}>
@@ -18,3 +22,4 @@ export const CartTotalValue = () => {
     </StyledCardTotalValue>
   );
 };
+
