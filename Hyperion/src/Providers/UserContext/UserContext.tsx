@@ -17,9 +17,9 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const token = localStorage.getItem("@TOKEN");
-    const id = localStorage.getItem("@USERID");
     const userAutoLoad = async () => {
+      const token = localStorage.getItem("@TOKEN");
+      const id = localStorage.getItem("@USERID");
       if (token) {
         try {
           const response = await api.get(`/users/${id}`, {
@@ -29,7 +29,7 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
           });
 
           setUser(response.data);
-          return navigate("/dashboard");
+          return navigate("/");
         } catch (error) {
           console.log(error);
           localStorage.removeItem("@TOKEN");
@@ -41,16 +41,17 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
     };
 
     userAutoLoad();
-  }, [user]);
+  }, []);
 
   const userRegister = async (data: IUserRegister) => {
     try {
       const response = await api.post("/register", data);
       setUser(response.data);
-      navigate("/dashboard");
+      navigate("/");
       toast.success("Usuário registrado com sucesso!");
     } catch (error) {
-      navigate("/");
+      console.error(error);
+      toast.error("Ocorreu algum erro, tente novamente!");
     } finally {
       setLoading(false);
     }
@@ -63,9 +64,7 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
       localStorage.setItem("@TOKEN", response.data.accessToken);
       localStorage.setItem("@USERID", response.data.user.id);
       console.log(response.data);
-      if (response.data) {
-        navigate("/dashboard");
-      }
+      navigate("/");
       toast.success("Usuário logado com sucesso!");
     } catch (error) {
       console.error(error);
@@ -78,7 +77,9 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
     localStorage.removeItem("@TOKEN");
     localStorage.removeItem("@USERID");
     toast.success("Usuário deslogado com sucesso!");
+    setUser(null);
     navigate("/login");
+    console.log("oi");
   };
 
   return (

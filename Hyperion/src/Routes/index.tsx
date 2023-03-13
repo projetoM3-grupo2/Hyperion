@@ -12,9 +12,6 @@ export const RoutesApp = () => {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="*" element={<LandPage />} />
-      <Route path="/dashboard" element={<ProtectedRoutes />}>
-        <Route index element={<LandPage />} />
-      </Route>
     </Routes>
   );
 };

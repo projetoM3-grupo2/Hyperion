@@ -16,6 +16,10 @@ import {
   DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
   useDisclosure,
 } from "@chakra-ui/react";
 import { GameContext } from "../../Providers/GameContext/GameContext";
@@ -47,28 +51,28 @@ export const Header = () => {
             }
           />
           <span>
-            <p>9</p>
+            <p>{currentSale.length}</p>
           </span>
         </div>
         {user ? (
           <>
-            <Avatar
-              size={"sm"}
-              name="Dan Abrahmov"
-              src="https://bit.ly/dan-abramov"
-            >
-              <AvatarBadge boxSize="20px" bg="green.500" />
-            </Avatar>
-            <Button
-              variant="outline"
-              mr={3}
-              color="pink.900"
-              onClick={() => {
-                userLogout();
-              }}
-            >
-              Logout
-            </Button>
+            <Menu>
+              <MenuButton>
+                <Avatar
+                  size={"sm"}
+                  name="Dan Abrahmov"
+                  src="https://bit.ly/dan-abramov"
+                >
+                  <AvatarBadge boxSize="20px" bg="green.500" />
+                </Avatar>
+              </MenuButton>
+              <MenuList bg={"gray.900"}>
+                <MenuItem onClick={userLogout} bg={"gray.900"}>
+                  Logout
+                </MenuItem>
+              </MenuList>
+            </Menu>
+
           </>
         ) : (
           <div className="btnsLogReg">

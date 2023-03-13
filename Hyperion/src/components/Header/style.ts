@@ -1,8 +1,18 @@
 import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
+display: flex;
+min-width: 100%;
+max-width: 1200px;
+background-color: transparent;
+align-items: center;
+padding: 10px;
+justify-content: space-between;
+z-index: 100000;
+
   display: flex;
   flex-direction: column;
+
 
   min-width: 100%;
   max-width: 1200px;
@@ -83,6 +93,15 @@ export const HeaderContainer = styled.header`
     gap: 10px;
     align-items: center;
   }
+
+
+.chakra-menu__menu-list css-1z05u95{
+    
+}
+
+.css-r6z5ec{
+    z-index: 10;
+}
 
   @media (min-width: 600px) {
     flex-direction: row;
