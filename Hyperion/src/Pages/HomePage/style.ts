@@ -1,11 +1,18 @@
 import styled from "styled-components";
 
 export const HomeStyled = styled.main `
-    width: 100vw;
 
-    overflow: hidden;
+    overflow: none;
 
     background-color: #0F0F0F;
+
+    Header {
+        padding: 1rem 5rem;
+
+        max-height: 60px;
+
+        position: absolute;
+    }
 `
 
 export const HomeStart = styled.section `
@@ -14,7 +21,7 @@ export const HomeStart = styled.section `
     justify-content: center;
     align-items: center;
 
-    width: 100vw;
+    width: 100%;
     height: 100vh;
 
     background-image: url("https://uploaddeimagens.com.br/images/004/384/679/original/back.png?1678453845");
@@ -51,7 +58,7 @@ export const Hero = styled.div `
 `
 
 export const Overlay = styled.div `
-  width: 100vw;
+  width: 100%;
   height: 100vh;
 
   position: absolute;
@@ -61,7 +68,7 @@ export const Overlay = styled.div `
 `;
 
 export const About = styled.section `
-    width: 100vw;
+    width: 100%;
 
     height: 100vh;
 
@@ -73,7 +80,7 @@ export const About = styled.section `
 
     color: #FFFFFF;
 
-    z-index: 10;
+    z-index: 5;
     
     h2 {
         font-size: 1.5rem;
@@ -82,13 +89,23 @@ export const About = styled.section `
 
     span {
         padding: 0 1rem;
+        
         text-align: center;
     }
 
     ul {
+        width: 100%;
+        
+        padding: 5%;
+
         display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        overflow-x: auto;
+
         gap: 35px;
-    }
+        }
 
     ul li {
         display: flex;
@@ -100,18 +117,36 @@ export const About = styled.section `
         gap: 15px;
     }
 
+    ul li a {
+        transition: 0.5s ease-in-out;
+    }
+
+    ul li a:hover {
+        color: var(--primary-color);
+    }
+
     ul li img {
         min-width: 100px;
         max-width: 150px;
 
         border-radius: 50%;
+
+        transition: 0.5s ease-in-out;
+    }
+
+    ul li img:hover {
+        scale: 1.1;
     }
   
     @media (min-width: 1000px) {
+        ul {
+            justify-content: center;
+        }
+
         h2 {
         font-size: 2.5rem;
         font-weight: bold;
-    }
+        }
     }
 `
 export const WaveBG = styled.img `
