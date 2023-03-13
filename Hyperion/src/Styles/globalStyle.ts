@@ -1,4 +1,4 @@
-import {createGlobalStyle} from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -31,4 +31,21 @@ export const GlobalStyle = createGlobalStyle`
     button{
         cursor: pointer;
     }
-`
+
+    body  .drawer_body h4{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width:100px;
+  }
+
+  body .drawer_body{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .chakra-modal__header{
+    margin-top: 15px;
+  }
+`;

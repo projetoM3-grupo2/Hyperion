@@ -59,13 +59,11 @@ export const StyledSection = styled.section`
     border-radius: var(--default-border);
   }
 
-
-
-  a{
+  a {
     color: var(--grey-0);
   }
 
-  a:hover{
+  a:hover {
     border-bottom: solid 1px var(--primary-color);
   }
 

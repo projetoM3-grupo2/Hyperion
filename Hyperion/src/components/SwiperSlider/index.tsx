@@ -25,7 +25,9 @@ export function SwiperComp() {
         loop={true}
         spaceBetween={10}
         navigation={true}
-        thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
+        thumbs={{
+          swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
+        }}
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper2"
       >
@@ -45,7 +47,7 @@ export function SwiperComp() {
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper"
       >
-       {games.map((product) => (
+        {games.map((product) => (
           <SwiperSlide key={product.id + 12432}>
             <img src={product.image} alt="Imagem do Produto" />
           </SwiperSlide>

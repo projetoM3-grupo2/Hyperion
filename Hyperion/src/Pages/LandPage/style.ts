@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledMainPage = styled.main`
-  background-color: black;
+  background-color: #0f0f0f;
   margin: 0 auto;
   padding: 0 10px;
 
