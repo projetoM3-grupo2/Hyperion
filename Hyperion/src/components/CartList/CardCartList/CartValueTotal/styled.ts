@@ -4,6 +4,7 @@ export const StyledCardTotalValue = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
+  background-color: var(--grey-4);
 
     div {
         display: flex;

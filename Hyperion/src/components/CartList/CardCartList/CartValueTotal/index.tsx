@@ -13,7 +13,7 @@ export const CartTotalValue = () => {
             <span>Total: </span>
             <span>R$ {amount} </span>
           </>
-        ) : null}
+        ) : <p>Carrinho vazio</p>}
       </div>
 
       <button type="button" onClick={() => removeAllProduct()}>

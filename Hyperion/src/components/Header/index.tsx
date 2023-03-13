@@ -58,7 +58,7 @@ export const Header = () => {
         {user ? (
           <>
             <Menu>
-              <MenuButton>
+              <MenuButton className="menuPos">
                 <Avatar
                   size={"sm"}
                   name="Dan Abrahmov"
@@ -92,10 +92,10 @@ export const Header = () => {
           <DrawerOverlay />
           <DrawerContent bg={"black"}>
             <DrawerCloseButton />
-            <DrawerHeader fontWeight={"bold"}>
+            <DrawerHeader fontWeight={"bold"} fontSize={"lg"}>
               "Carrinho de Compras"
             </DrawerHeader>
-            <DrawerBody>
+            <DrawerBody className="drawer_body">
               {currentSale.map((product) => (
                 <CardCartList key={product.id} product={product} removeProduct={removeProduct} />
               ))}

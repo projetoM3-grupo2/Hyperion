@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledMainPage = styled.main`
-  background-color: black;
+  background-color: #0F0F0F;
   margin: 0 auto;
   padding: 0 10px;
 
@@ -16,4 +16,5 @@ export const StyledMainPage = styled.main`
     max-width: 1200px;
     margin: 0 auto;
   }
+
 `;
