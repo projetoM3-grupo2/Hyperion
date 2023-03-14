@@ -6,7 +6,7 @@ export const HomeStyled = styled.main`
   background-color: #0f0f0f;
 
   Header {
-    padding: 1rem 5rem;
+    padding: 44px 50px;
 
     max-height: 60px;
 
@@ -35,10 +35,10 @@ export const Hero = styled.div`
   flex-direction: column;
   align-items: center;
 
-  margin-top: -5rem;
+  margin-top: -80px;
 
   h1 {
-    font-size: 130px;
+    font-size: 9rem;
     font-weight: bold;
     color: white;
   }
@@ -86,7 +86,7 @@ export const About = styled.section`
   }
 
   span {
-    padding: 0 1rem;
+    padding: 0 16px;
 
     text-align: center;
   }
