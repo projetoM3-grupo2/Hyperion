@@ -14,6 +14,7 @@ export const HomeStyled = styled.main`
   }
 `;
 
+
 export const HomeStart = styled.section`
   display: flex;
   flex-direction: column;
