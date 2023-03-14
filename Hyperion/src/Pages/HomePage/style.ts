@@ -58,7 +58,7 @@ export const Hero = styled.div`
 export const Overlay = styled.div`
   width: 100%;
   height: 100vh;
-
+  
   position: absolute;
   z-index: 1;
 
