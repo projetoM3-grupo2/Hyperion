@@ -18,7 +18,7 @@ import { GameContext } from "../../Providers/GameContext/GameContext";
 
 export function SwiperComp() {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperCore>();
-  const { games, addProduct } = useContext(GameContext);
+  const { games } = useContext(GameContext);
   return (
     <>
       <Swiper
