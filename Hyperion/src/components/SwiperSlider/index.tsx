@@ -1,13 +1,13 @@
 import { useContext, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { FreeMode, Navigation, Thumbs } from "swiper";
+import { GameContext } from "../../Providers/GameContext/GameContext";
+import SwiperCore from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import "./styles.css";
-import { FreeMode, Navigation, Thumbs } from "swiper";
-import SwiperCore from "swiper";
-import { GameContext } from "../../Providers/GameContext/GameContext";
 
 export function SwiperComp() {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperCore>();

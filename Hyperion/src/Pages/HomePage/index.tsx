@@ -25,7 +25,7 @@ export const Home = () => {
               src="https://avatars.githubusercontent.com/u/107319103?v=4"
               alt=""
             />
-            <span>Vitor</span>
+            <span>Vitor Hugo</span>
             <a href="https://github.com/theonlyvitor">Github</a>
             <a href="https://www.linkedin.com/in/vitorhugorm/">Linkedin</a>
           </li>
@@ -34,7 +34,7 @@ export const Home = () => {
               src="https://avatars.githubusercontent.com/u/110185110?v=4"
               alt=""
             />
-            <span>Geraldo</span>
+            <span>Geraldo Pereira</span>
             <a href="https://github.com/Geraldopereirads">Github</a>
             <a href="https://www.linkedin.com/in/geraldo-pereira/">Linkedin</a>
           </li>
@@ -43,7 +43,7 @@ export const Home = () => {
               src="https://avatars.githubusercontent.com/u/114514318?v=4"
               alt=""
             />
-            <span>Rafhel</span>
+            <span>Rafhael Cristian</span>
             <a href="https://github.com/Rafhaelcristian">Github</a>
             <a href="https://www.linkedin.com/in/rafhael-cristian-alc%C3%A2ntara-de-cunha-18629b251/">
               Linkedin
@@ -54,7 +54,7 @@ export const Home = () => {
               src="https://avatars.githubusercontent.com/u/103015314?v=4"
               alt=""
             />
-            <span>Lucas</span>
+            <span>Lucas Ribeiro</span>
             <a href="https://github.com/LuckDev22">Github</a>
             <a href="https://www.linkedin.com/in/lucas-ribeiro-1ba28b229/">
               Linkedin
@@ -65,7 +65,7 @@ export const Home = () => {
               src="https://avatars.githubusercontent.com/u/103394500?v=4"
               alt=""
             />
-            <span>Mateus</span>
+            <span>Mateus Carius</span>
             <a href="https://github.com/MattCari">Github</a>
             <a href="https://www.linkedin.com/in/mateus-carius-604033148/">
               Linkedin
